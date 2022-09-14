@@ -1,22 +1,18 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import 'normalize.css'
-import './styles/style.scss';
-
-</script>
-
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-  <RouterView />
+  <v-app>
+    <v-layout>
+      <v-navigation-drawer permanent width="170">
+        <v-list density="compact" nav>
+          <v-list-item title="Home" to="/" prepend-icon="mdi-home" />
+          <v-list-item title="About" to='/about' prepend-icon="mdi-information" />
+        </v-list>
+      </v-navigation-drawer>
+      <v-main>
+        <router-view />
+      </v-main>
+    </v-layout>
+  </v-app>
 </template>
 
-<style scoped>
-
-</style>
+<script setup lang="ts">
+</script>

@@ -14,10 +14,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="d-flex flex-row gap-2 container flex-wrap justify-content-center">
-    <VLoader v-if="isLoading" :size="99" />
-    <MatchItem v-for="(match, index) in matchesByDate" :key="match.id" :item="match" />
-  </main>
+  <VLoader v-if="isLoading" :size="99" />
+  <MatchItem v-for="(match, index) in matchesByDate" :key="match.id" :item="match" />
 </template>
 
 <style scoped lang="scss">
