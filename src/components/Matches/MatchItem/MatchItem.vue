@@ -10,7 +10,7 @@ const props = defineProps<MatchItemProps>();
 </script>
 
 <template>
-  <VCard>
+  <VCard :title="`${item.homeTeam.name} - ${item.awayTeam.name}`">
     <div class="d-flex gap-1">
       <h5>{{item.homeTeam.name}} - {{item.awayTeam.name}}</h5>
       <h6>{{item.status}}</h6>
