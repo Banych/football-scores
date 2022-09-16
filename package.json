@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
-    "deploy": "sh deploy.sh -v patch",
+    "deploy-major": "sh deploy.sh -v major",
+    "deploy-minor": "sh deploy.sh -v minor",
+    "deploy-patch": "sh deploy.sh -v patch",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
