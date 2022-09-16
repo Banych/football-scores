@@ -7,7 +7,7 @@ done
 
 npm run build
 
-git add && git commit -m 'builded for deploy'
+git add . && git commit -m 'builded for deploy'
 
 set -e
 
