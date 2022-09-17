@@ -1,0 +1,42 @@
+@import './spacing.css';
+
+html {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.height-100vh {
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.width-fill-available {
+  width: -webkit-fill-available;
+}

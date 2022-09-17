@@ -10,10 +10,10 @@ const props = defineProps<MatchItemProps>();
 </script>
 
 <template>
-  <VCard :title="`${item.homeTeam.name} - ${item.awayTeam.name}`">
+  <VCard :title="`${item.homeTeam.name} - ${item.awayTeam.name}`"
+    :subTitle="new Date(item.utcDate).toLocaleString()" class="width-fill-available">
     <div class="d-flex gap-1">
-      <h5>{{item.homeTeam.name}} - {{item.awayTeam.name}}</h5>
-      <h6>{{item.status}}</h6>
+      <span>{{item.status}}</span>
     </div>
   </VCard>
 </template>
