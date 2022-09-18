@@ -1,13 +1,23 @@
-import type { ITeam } from "./ITeam";
+import type { MatchStatus } from './MatchStatus';
+import type { MatchStage } from './MatchStage';
+import type { MatchGroup } from './MatchGroup';
+import type { ITeam } from './ITeam';
+import type { IArea } from './IArea';
+import type { ICompetition } from './ICompetition';
+import type { ISeason } from './ISeason';
 
 export interface IMatch {
   id: number;
+  area: IArea;
+  competition: ICompetition;
   utcDate: string;
-  status: string;
+  status: MatchStatus;
   matchday: number;
-  stage: string;
-  group: string;
+  stage: MatchStage;
+  group?: MatchGroup;
   lastUpdated: string;
   homeTeam: ITeam;
   awayTeam: ITeam;
+  venue: string;
+  season: ISeason;
 }

@@ -37,6 +37,22 @@ html {
   align-items: center;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 .width-fill-available {
   width: -webkit-fill-available;
+}
+
+.max-width {
+  max-width: 960px;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
 }

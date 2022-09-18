@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   <VScrollable>
-    <div class="d-flex flex-wrap gap-1">
+    <div class="d-flex flex-wrap gap-1 justify-content-center mx-1">
       <VLoader v-if="isLoading" :size="99" />
       <MatchItem v-for="(match, index) in matchesByDate" :key="match.id" :item="match" />
     </div>

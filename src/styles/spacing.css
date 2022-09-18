@@ -193,3 +193,8 @@
 .pt-0 {
   padding-top: 0;
 }
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

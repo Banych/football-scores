@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import VTypography from "../VTypography/VTypography.vue";
-const props = defineProps<{
+import VTypography from '../VTypography/VTypography.vue';
+defineProps<{
   title?: string;
   subTitle?: string;
 }>();
@@ -9,10 +9,10 @@ const props = defineProps<{
 <template>
   <div class="outer-container">
     <div class="card-title px-2 py-1">
-      <VTypography>{{title}}</VTypography>
+      <VTypography>{{ title }}</VTypography>
     </div>
     <div class="px-2 py-1">
-      {{subTitle}}
+      {{ subTitle }}
     </div>
     <div class="p-2 pt-0">
       <slot></slot>
@@ -24,9 +24,8 @@ const props = defineProps<{
 .outer-container {
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: 5px 5px 10px #adadad,
-    -5px -5px 10px #ffffff;
-  max-width: 300px;
+  box-shadow: 5px 5px 10px #adadad, -5px -5px 10px #ffffff;
+  max-width: 32%;
 }
 
 .card-title {
@@ -37,13 +36,15 @@ const props = defineProps<{
   background-color: #f5f5f5;
 }
 
-@media(max-width: 960px) {
-  .outer-container {}
+@media (max-width: 933px) {
+  .outer-container {
+    max-width: 45%;
+  }
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .outer-container {
-    max-width: 220px;
+    max-width: 100%;
   }
 }
 </style>
