@@ -6,17 +6,25 @@ export type MatchItemProps = {
   item: IMatch;
 };
 
-const props = defineProps<MatchItemProps>();
+defineProps<MatchItemProps>();
 </script>
 
 <template>
-  <VCard
-    :title="`${item.homeTeam.name} - ${item.awayTeam.name}`"
-    :subTitle="new Date(item.utcDate).toLocaleString()"
-    class="width-fill-available"
-  >
-    <div class="">
-      <span>{{ item.status }}</span>
+  <VCard class="width-fill-available">
+    <template #title>
+      <img
+        v-if="item.competition.area"
+        :src="item.competition.area.ensignUrl"
+        :alt="item.competition.area.name"
+        width="20"
+      />
+      {{ `${new Date(item.utcDate).toLocaleString()} - ${item.status}` }}
+    </template>
+    <template #subTitle>
+      <span>{{ `${item.homeTeam.name} - ${item.awayTeam.name}` }}</span>
+    </template>
+    <div>
+      {{ item.competition.name }}
     </div>
   </VCard>
 </template>

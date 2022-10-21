@@ -1,18 +1,23 @@
 <script setup lang="ts">
+import { computed, useSlots } from 'vue';
 import VTypography from '../VTypography/VTypography.vue';
-defineProps<{
-  title?: string;
-  subTitle?: string;
-}>();
+
+const isTitleString = computed(() => typeof useSlots().title === 'string');
 </script>
 
 <template>
   <div class="outer-container">
     <div class="card-title px-2 py-1">
-      <VTypography>{{ title }}</VTypography>
+      <VTypography v-if="isTitleString">
+        <slot name="title"></slot>
+      </VTypography>
+      <div v-else><slot name="title"></slot></div>
     </div>
-    <div class="px-2 py-1">
-      {{ subTitle }}
+    <div
+      class="px-2 py-1"
+      v-if="!!$slots.subTitle"
+    >
+      <slot name="subTitle"></slot>
     </div>
     <div class="p-2 pt-0">
       <slot></slot>

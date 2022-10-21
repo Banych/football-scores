@@ -3,4 +3,5 @@ export interface IArea {
   name: string;
   code: string;
   flag: string;
+  ensignUrl: string;
 }

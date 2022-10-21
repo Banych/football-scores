@@ -19,5 +19,5 @@ export interface IMatch {
   homeTeam: ITeam;
   awayTeam: ITeam;
   venue: string;
-  season: ISeason;
+  season?: ISeason;
 }

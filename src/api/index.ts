@@ -1,24 +1,25 @@
 import axios, { type AxiosResponse } from 'axios';
+import type { IMatch } from '../models/IMatch';
 import type { IMatchResult } from '../models/IMatchResult';
 
 const API_token = 'd5fcdeb3c9944082b3105447ebca48b7';
-const API_URL = 'http://api.football-data.org/v4';
+const API_URL = 'http://api.football-data.org/v2';
 axios.defaults.baseURL = API_URL;
 axios.defaults.headers.common['X-Auth-Token'] = API_token;
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
-const responseBody = (response: AxiosResponse) => response.data;
+const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
 const requests = {
-  get: (url: string) => axios.get(url).then(responseBody),
-  post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
-  put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
-  del: (url: string) => axios.delete(url).then(responseBody),
+  get: <T>(url: string) => axios.get<T>(url).then(responseBody),
+  post: <T>(url: string, body: {}) =>
+    axios.post<T>(url, body).then(responseBody),
+  put: <T>(url: string, body: {}) => axios.put<T>(url, body).then(responseBody),
+  del: <T>(url: string) => axios.delete<T>(url).then(responseBody),
 };
 
 const Matches = {
-  list: (): Promise<IMatchResult> => requests.get('/matches'),
-  details: (id: string) => requests.get(`/matches/${id}`),
+  list: () => requests.get<IMatchResult>('/matches'),
+  details: (id: string) => requests.get<IMatch>(`/matches/${id}`),
 };
 
 export default {

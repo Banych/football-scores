@@ -4,11 +4,11 @@ import api from '../api';
 import type { IMatch } from '../models/IMatch';
 
 export const useMatchesStore = defineStore('matches', () => {
-  const matches = ref<Map<number, IMatch>>(new Map<number, IMatch>);
+  const matches = ref<Map<number, IMatch>>(new Map<number, IMatch>());
   const isLoading = ref(false);
 
-  const matchesByDate = computed(() => Array.from(matches.value.values())
-    .sort(
+  const matchesByDate = computed(() =>
+    Array.from(matches.value.values()).sort(
       (a: IMatch, b: IMatch) => Date.parse(a.utcDate) - Date.parse(b.utcDate)
     )
   );
@@ -17,13 +17,12 @@ export const useMatchesStore = defineStore('matches', () => {
     try {
       isLoading.value = true;
       const matchResults = await api.Matches.list();
-      matches.value = new Map<number, IMatch>(matchResults.matches.map(
-        match => ([ match.id, match ])
-      ));
+      matches.value = new Map<number, IMatch>(
+        matchResults.matches.map((match) => [match.id, match])
+      );
     } catch (error) {
       console.error(error);
-    }
-    finally {
+    } finally {
       isLoading.value = false;
     }
   }
@@ -32,6 +31,6 @@ export const useMatchesStore = defineStore('matches', () => {
     isLoading,
     matches,
     matchesByDate,
-    loadMatches
-  }
-})
+    loadMatches,
+  };
+});

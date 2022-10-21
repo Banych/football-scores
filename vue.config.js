@@ -1,6 +1,6 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
+import { defineConfig } from '@vue/cli-service';
+export default defineConfig({
   pluginOptions: {
-    vuetify: {}
-  }
-})
+    vuetify: {},
+  },
+});
