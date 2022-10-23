@@ -1,16 +1,25 @@
 <script setup lang="ts">
-const props = defineProps<{
-  title?: string;
-  subTitle?: string;
-}>();
+import { computed, useSlots } from 'vue';
+import VTypography from '../VTypography/VTypography.vue';
+
+const isTitleString = computed(() => typeof useSlots().title === 'string');
 </script>
 
 <template>
-  <div class="outer-container width-fill-available">
-    <h2 v-if="title" class="card-title p-1">
-      {{title}}
-    </h2>
-    <div class="px-2 pt-1 pb-2">
+  <div class="outer-container">
+    <div class="card-title px-2 py-1">
+      <VTypography v-if="isTitleString">
+        <slot name="title"></slot>
+      </VTypography>
+      <div v-else><slot name="title"></slot></div>
+    </div>
+    <div
+      class="px-2 py-1"
+      v-if="!!$slots.subTitle"
+    >
+      <slot name="subTitle"></slot>
+    </div>
+    <div class="p-2 pt-0">
       <slot></slot>
     </div>
   </div>
@@ -20,22 +29,27 @@ const props = defineProps<{
 .outer-container {
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: 6px 6px 12px #e3e3e3,
-    -6px -6px 12px #ffffff;
-  max-width: 300px;
+  box-shadow: 5px 5px 10px #adadad, -5px -5px 10px #ffffff;
+  max-width: 32%;
 }
 
 .card-title {
-  border-bottom: 1px solid #e3e3e3;
+  border-radius: 10px 10px 0 0;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: #e3e3e3;
+  background-color: #f5f5f5;
 }
 
-@media(max-width: 960px) {
-  .outer-container {}
-}
-
-@media(max-width: 720px) {
+@media (max-width: 933px) {
   .outer-container {
-    max-width: 220px;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 720px) {
+  .outer-container {
+    max-width: 100%;
   }
 }
 </style>

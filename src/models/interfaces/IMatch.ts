@@ -1,10 +1,11 @@
-import type { MatchStatus } from './MatchStatus';
-import type { MatchStage } from './MatchStage';
-import type { MatchGroup } from './MatchGroup';
+import type { MatchStatus } from '../MatchStatus';
+import type { MatchStage } from '../MatchStage';
+import type { MatchGroup } from '../MatchGroup';
 import type { ITeam } from './ITeam';
 import type { IArea } from './IArea';
 import type { ICompetition } from './ICompetition';
 import type { ISeason } from './ISeason';
+import type { IScore } from './IScore';
 
 export interface IMatch {
   id: number;
@@ -20,4 +21,5 @@ export interface IMatch {
   awayTeam: ITeam;
   venue: string;
   season?: ISeason;
+  score: IScore;
 }

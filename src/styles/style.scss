@@ -1,0 +1,81 @@
+@import './spacing.scss';
+@import './scroll.scss';
+
+$point: 8px;
+
+html {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.height-100vh {
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.width-fill-available {
+  width: -webkit-fill-available;
+}
+
+.max-width {
+  max-width: 960px;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.d-table {
+  display: table;
+}
+
+.d-table-row {
+  display: table-row;
+}
+
+.d-table-cell {
+  display: table-cell;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
