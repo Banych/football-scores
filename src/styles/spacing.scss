@@ -1,0 +1,202 @@
+$point: 8px;
+
+.gap-1 {
+  gap: $point;
+}
+
+.gap-2 {
+  gap: $point * 2;
+}
+
+.gap-3 {
+  gap: $point * 3;
+}
+
+.px-1 {
+  padding-left: $point;
+  padding-right: $point;
+}
+
+.px-2 {
+  padding-left: $point * 2;
+  padding-right: $point * 2;
+}
+
+.px-3 {
+  padding-left: $point * 3;
+  padding-right: $point * 3;
+}
+
+.py-1 {
+  padding-top: $point;
+  padding-bottom: $point;
+}
+
+.py-2 {
+  padding-top: $point * 2;
+  padding-bottom: $point * 2;
+}
+
+.py-3 {
+  padding-top: $point * 3;
+  padding-bottom: $point * 3;
+}
+
+.pt-1 {
+  padding-top: $point;
+}
+
+.pt-2 {
+  padding-top: $point * 2;
+}
+
+.pt-3 {
+  padding-top: $point * 3;
+}
+
+.pr-1 {
+  padding-right: $point;
+}
+
+.pr-2 {
+  padding-right: $point * 2;
+}
+
+.pr-3 {
+  padding-right: $point * 3;
+}
+
+.pb-1 {
+  padding-bottom: $point;
+}
+
+.pb-2 {
+  padding-bottom: $point * 2;
+}
+
+.pb-3 {
+  padding-bottom: $point * 3;
+}
+
+.pl-1 {
+  padding-left: $point;
+}
+
+.pl-2 {
+  padding-left: $point * 2;
+}
+
+.pl-3 {
+  padding-left: $point * 3;
+}
+
+.mx-1 {
+  padding-left: $point;
+  padding-right: $point;
+}
+
+.mx-2 {
+  padding-left: $point * 2;
+  padding-right: $point * 2;
+}
+
+.mx-3 {
+  padding-left: $point * 3;
+  padding-right: $point * 3;
+}
+
+.my-1 {
+  padding-top: $point;
+  padding-bottom: $point;
+}
+
+.my-2 {
+  padding-top: $point * 2;
+  padding-bottom: $point * 2;
+}
+
+.my-3 {
+  padding-top: $point * 3;
+  padding-bottom: $point * 3;
+}
+
+.mt-1 {
+  padding-top: $point;
+}
+
+.mt-2 {
+  padding-top: $point * 2;
+}
+
+.mt-3 {
+  padding-top: $point * 3;
+}
+
+.mr-1 {
+  padding-right: $point;
+}
+
+.mr-2 {
+  padding-right: $point * 2;
+}
+
+.mr-3 {
+  padding-right: $point * 3;
+}
+
+.mb-1 {
+  padding-bottom: $point;
+}
+
+.mb-2 {
+  padding-bottom: $point * 2;
+}
+
+.mb-3 {
+  padding-bottom: $point * 3;
+}
+
+.ml-1 {
+  padding-left: $point;
+}
+
+.ml-2 {
+  padding-left: $point * 2;
+}
+
+.ml-3 {
+  padding-left: $point * 3;
+}
+
+.p-1 {
+  padding: $point;
+}
+
+.p-2 {
+  padding: $point * 2;
+}
+
+.p-3 {
+  padding: $point * 3;
+}
+
+.m-1 {
+  margin: $point;
+}
+
+.m-2 {
+  margin: $point * 2;
+}
+
+.m-3 {
+  margin: $point * 3;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

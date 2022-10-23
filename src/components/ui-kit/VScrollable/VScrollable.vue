@@ -8,7 +8,7 @@
 
 <style scoped>
 .outer {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .scrollable {

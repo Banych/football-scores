@@ -1,32 +1,41 @@
 <script setup lang="ts">
-import type { IMatch } from '../../../models/IMatch';
-import VCard from '../../ui-kit/VCard/VCard.vue';
+import { computed } from 'vue';
+import type { Match } from '../../../models/classes/Match';
+import { dateFormat } from '../../../utils/dateFormat';
 
 export type MatchItemProps = {
-  item: IMatch;
+  item: Match;
 };
 
-defineProps<MatchItemProps>();
+const props = defineProps<MatchItemProps>();
+
+const formattedStartDate = computed(() => dateFormat(props.item.startDate));
+
+const matchStatus = computed(() => props.item.status);
 </script>
 
 <template>
-  <VCard class="width-fill-available">
-    <template #title>
-      <img
-        v-if="item.competition.area"
-        :src="item.competition.area.ensignUrl"
-        :alt="item.competition.area.name"
-        width="20"
-      />
-      {{ `${new Date(item.utcDate).toLocaleString()} - ${item.status}` }}
-    </template>
-    <template #subTitle>
-      <span>{{ `${item.homeTeam.name} - ${item.awayTeam.name}` }}</span>
-    </template>
-    <div>
-      {{ item.competition.name }}
+  <div class="d-table-row gap-2 mb-1">
+    <div class="match-status">
+      {{ matchStatus }}
     </div>
-  </VCard>
+    <div class="home-team d-table-cell text-align-right px-2 py-1">
+      {{ item.homeTeam.name }}
+    </div>
+    <div class="score d-table-cell px-2 py-1" v-if="item.score.fullTimeScore">
+      {{ item.score.fullTimeScore }}
+    </div>
+    <div class="startTime d-table-cell px-2 py-1" v-else>
+      {{ formattedStartDate }}
+    </div>
+    <div class="away-team d-table-cell text-align-left px-2 py-1">
+      {{ item.awayTeam.name }}
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.d-table-row:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+</style>

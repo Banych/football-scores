@@ -1,4 +1,7 @@
-@import './spacing.css';
+@import './spacing.scss';
+@import './scroll.scss';
+
+$point: 8px;
 
 html {
   overflow-x: auto;
@@ -55,4 +58,24 @@ html {
 
 .width-auto {
   width: auto;
+}
+
+.d-table {
+  display: table;
+}
+
+.d-table-row {
+  display: table-row;
+}
+
+.d-table-cell {
+  display: table-cell;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
 }

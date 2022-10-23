@@ -7,18 +7,18 @@ import VLoader from '../components/ui-kit/VLoader/VLoader.vue';
 import VScrollable from '../components/ui-kit/VScrollable/VScrollable.vue';
 
 const matchesStore = useMatchesStore();
-const { matchesByDate, isLoading } = storeToRefs(matchesStore)
+const { matchesByDate, isLoading } = storeToRefs(matchesStore);
 
 onMounted(() => {
   matchesStore.loadMatches();
-})
+});
 </script>
 
 <template>
   <VScrollable>
-    <div class="d-flex flex-wrap gap-1 justify-content-center mx-1">
-      <VLoader v-if="isLoading" :size="99" />
-      <MatchItem v-for="(match, index) in matchesByDate" :key="match.id" :item="match" />
+    <VLoader v-if="isLoading" :size="99" />
+    <div class="d-table gap-1 mx-1">
+      <MatchItem v-for="match in matchesByDate" :key="match.id" :item="match" />
     </div>
   </VScrollable>
 </template>
